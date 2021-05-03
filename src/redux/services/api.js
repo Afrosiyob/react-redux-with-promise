@@ -8,7 +8,7 @@ const delay = (ms) => {
 
 export const fetchDataApi = async (url) => {
   try {
-    await delay(300);
+    await delay(2000);
     const response = await fetch(url);
     const data = await response.json();
     return { data };
