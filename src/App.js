@@ -13,10 +13,18 @@ function App() {
     dispatch(fetchData(url));
   });
 
-  const Animals = (options) => {
+  const Animals = function (options) {
     this.name = options.name;
     this.color = options.color;
   };
+
+  const dog = new Animals({ name: "Rex", color: "#fff" });
+
+  Animals.prototype.voice = function () {
+    console.log("this is voice of", this.name);
+  };
+
+  console.log(dog);
 
   return (
     <div className="App">
