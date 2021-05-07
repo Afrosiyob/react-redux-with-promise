@@ -9,11 +9,14 @@ function App() {
 
   const url = "https://jsonplaceholder.typicode.com/todos";
 
-  console.log("hello");
-
   useEffect(() => {
     dispatch(fetchData(url));
   });
+
+  const Animals = (options) => {
+    this.name = options.name;
+    this.color = options.color;
+  };
 
   return (
     <div className="App">
