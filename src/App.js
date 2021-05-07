@@ -4,19 +4,21 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchData } from "./redux/test/action";
 
-function App () {
+function App() {
   const dispatch = useDispatch();
 
   const url = "https://jsonplaceholder.typicode.com/todos";
 
-  useEffect( () => {
-    dispatch( fetchData( url ) );
-  } );
+  console.log("hello");
+
+  useEffect(() => {
+    dispatch(fetchData(url));
+  });
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={ logo } className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
