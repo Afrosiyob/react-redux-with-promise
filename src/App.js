@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchData } from "./redux/test/action";
 import { useFormInput } from "./hooks/useFormInput";
+import CountBtn from "./components/CountBtn";
 
 
 function App () {
@@ -29,6 +30,8 @@ function App () {
 
 
         <input type="text" { ...name } />
+
+        <CountBtn />
 
 
 
