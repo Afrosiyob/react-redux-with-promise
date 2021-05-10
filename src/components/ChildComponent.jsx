@@ -1,11 +1,13 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
 
-const ChildComponent = (props) => {
+const ChildComponent = ( props ) => {
   const { title = "custom title", array } = props;
 
-  console.log("CHILDREN COMPONENT");
-  return <div>Child component {title} </div>;
+  console.log( "CHILDREN COMPONENT" );
+  console.log( array );
+
+  return <div>Child component { title } </div>;
 };
 
 ChildComponent.propTypes = {
@@ -13,4 +15,4 @@ ChildComponent.propTypes = {
   array: PropTypes.array.isRequired,
 };
 
-export default memo(ChildComponent);
+export default memo( ChildComponent );

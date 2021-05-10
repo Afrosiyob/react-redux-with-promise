@@ -6,33 +6,39 @@ import { fetchData } from "./redux/test/action";
 import ChildComponent from "./components/ChildComponent";
 import { useState } from "react";
 import { useMemo } from "react";
+import Todo from "./components/Todo";
 
-function App() {
+
+
+function App () {
   const dispatch = useDispatch();
   const url = "https://jsonplaceholder.typicode.com/todos";
-  useEffect(() => {
-    dispatch(fetchData(url));
-  }, [dispatch]);
+  useEffect( () => {
+    dispatch( fetchData( url ) );
+  }, [ dispatch ] );
 
-  const [count, setCount] = useState(0);
+  const [ count, setCount ] = useState( 0 );
 
-  const array = useMemo(() => {
-    return ["One", "Two", "Three"];
-  }, []);
+  const array = useMemo( () => {
+    return [ "One", "Two", "Three" ];
+  }, [] );
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1> Count is {count} </h1>
+
+        <Todo />
+
+        <h1> Count is { count } </h1>
         <button
           type="button"
-          onClick={() => setCount((prevCount) => prevCount + 1)}
+          onClick={ () => setCount( ( prevCount ) => prevCount + 1 ) }
         >
-          {" "}
-          Incriment Count{" "}
+          { " " }
+          Incriment Count{ " " }
         </button>
-        <ChildComponent title="This is title..." array={array} />
-      </header>{" "}
+        <ChildComponent title="This is title..." array={ array } />
+      </header>{ " " }
     </div>
   );
 }
