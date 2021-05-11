@@ -23,11 +23,32 @@ function App () {
     return [ "One", "Two", "Three" ];
   }, [] );
 
+
+
+  const todos = [
+    {
+      id: 1,
+      title: "open door",
+      completed: false
+    },
+    {
+      id: 2,
+      title: "wash dishes",
+      completed: true
+    }
+  ]
+
   return (
     <div className="App">
       <header className="App-header">
 
-        <Todo />
+
+
+        {
+          todos.map( ( todo, index ) => (
+            <Todo todo={ todo } key={ index } />
+          ) )
+        }
 
         <h1> Count is { count } </h1>
         <button
@@ -35,7 +56,7 @@ function App () {
           onClick={ () => setCount( ( prevCount ) => prevCount + 1 ) }
         >
           { " " }
-          Incriment Count{ " " }
+          Increment Count{ " " }
         </button>
         <ChildComponent title="This is title..." array={ array } />
       </header>{ " " }
