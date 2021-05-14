@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`link test describe link test it 1`] = `
-<div>
-  this is link
-</div>
-`;
