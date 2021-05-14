@@ -7,6 +7,7 @@ import ChildComponent from "./components/ChildComponent";
 import { useState } from "react";
 import { useMemo } from "react";
 import Todo from "./components/Todo";
+import Link from "./components/Link/Link";
 
 
 
@@ -42,6 +43,8 @@ function App () {
     <div className="App">
       <header className="App-header">
 
+
+        <Link title="this is title" />
 
 
         {
