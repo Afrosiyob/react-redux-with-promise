@@ -1,8 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
 import ApiServices from './redux/services/api';
 import { useEffect, useState } from 'react';
 import Todo from './components/Todo/Todo';
+import Counter from './components/Counter/Counter';
 
 function App () {
 
@@ -49,10 +50,8 @@ function App () {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={ logo } className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+
+
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -66,6 +65,7 @@ function App () {
         { todos?.map( ( todo, index ) => (
           <Todo key={ index } label={ todo.label } completed={ todo.completed } />
         ) ) }
+        <Counter number={ 0 } />
 
       </header>
     </div>
