@@ -30,7 +30,6 @@ function App () {
   const url = "https://jsonplaceholder.typicode.com/todos";
 
 
-
   useEffect( () => {
 
     testData( url ).then( ( result ) => {
@@ -43,7 +42,6 @@ function App () {
     } );
 
   } )
-
 
 
   const { todos } = state;
