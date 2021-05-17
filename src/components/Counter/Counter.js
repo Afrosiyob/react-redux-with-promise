@@ -1,37 +1,29 @@
-import React, { Fragment, useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { Fragment, useState } from "react";
+import PropTypes from "prop-types";
 
-const Counter = props => {
+const Counter = (props) => {
+  const { number = 0 } = props;
 
-    const { number = 0 } = props
+  const [count, setCount] = useState(number || 0);
 
-    const [ count, setCount ] = useState( number || 0 )
+  const decrementAction = () => {
+    setCount((prevCount) => prevCount - 1);
+  };
+  const incrementAction = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
 
-
-
-    const decrementAction = () => {
-        setCount( prevCount => prevCount - 1 )
-    }
-    const incrementAction = () => {
-        setCount( prevCount => prevCount + 1 )
-    }
-
-    return (
-        <Fragment>
-
-            <h3> count { count } </h3>
-
-            <button onClick={ decrementAction }> decrement </button>
-            <button onClick={ incrementAction } >  increment </button>
-
-        </Fragment>
-    )
-}
+  return (
+    <Fragment>
+      count {count}
+      <button onClick={decrementAction}> decrement </button>
+      <button onClick={incrementAction}> increment </button>
+    </Fragment>
+  );
+};
 
 Counter.propTypes = {
+  number: PropTypes.number.isRequired,
+};
 
-    number: PropTypes.number.isRequired
-
-}
-
-export default Counter
+export default Counter;

@@ -1,15 +1,12 @@
 import { render, cleanup, screen } from "@testing-library/react";
 import Todo from "../Todo";
 
+afterEach(() => {
+  cleanup();
+});
 
-afterEach( () => {
-    cleanup()
-} )
-
-test( "Todo", () => {
-
-    render( <Todo /> );
-    const testElement = screen.getByTestId( "todo-1" );
-    expect( testElement ).toBeInTheDocument();
-
-} )
+test("Todo", () => {
+  render(<Todo label="this is label" completed={false} />);
+  const testElement = screen.getByTestId("todo-1");
+  expect(testElement).toBeInTheDocument();
+});
