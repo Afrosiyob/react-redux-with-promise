@@ -1,28 +1,14 @@
-import { act, cleanup, render } from "@testing-library/react";
-import { unmountComponentAtNode } from "react-dom";
+import { render } from "@testing-library/react";
 import Counter from "../Counter";
 
-let container = null;
-beforeEach(() => {
-  // setup a DOM element as a render target
-  container = document.createElement("div");
-  document.body.appendChild(container);
+test("Counter", () => {
+  const { container } = render(<Counter />);
+
+  expect(container).toBeInTheDocument();
 });
 
-afterEach(() => {
-  // cleanup on exiting
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-  cleanup();
-});
+test("Counter with props", () => {
+  const { container } = render(<Counter number={0} />);
 
-it("Counter", () => {
-  act(() => {
-    render(<Counter number={0} />, container);
-  });
-
-  console.log(container.innerHTML);
-
-  //   expect(container.textContent).toBe("count");
+  expect(container).toBeInTheDocument();
 });

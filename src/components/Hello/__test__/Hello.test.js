@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, render, screen, fireEvent } from "@testing-library/react";
 import Hello from "../Hello";
 import renderer from "react-test-renderer";
 
@@ -19,15 +19,13 @@ test("Hello no props", () => {
 });
 
 test("Hello with props", () => {
-  render(<Hello name="Jane" />);
+  const { container } = render(<Hello name="Jane" />);
 
-  const helloelement = screen.getByTestId("hello-1");
+  expect(container).toBeInTheDocument();
 
-  expect(helloelement).toBeInTheDocument();
+  expect(container).toHaveTextContent("Hello, Jane");
 
-  expect(helloelement).toHaveTextContent("Hello, Jane");
-
-  expect(helloelement).toContainHTML(
+  expect(container).toContainHTML(
     '<h3 data-testid="hello-1"> Hello, Jane </h3>'
   );
 });
