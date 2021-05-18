@@ -4,6 +4,6 @@ exports[`Hello snapshot 1`] = `
 <span
   data-testid="hello-1"
 >
-   Hi, stranger 
+   XD Hi, stranger 
 </span>
 `;
