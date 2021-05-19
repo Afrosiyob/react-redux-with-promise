@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Todo from "./components/Todo/Todo";
 import Counter from "./components/Counter/Counter";
 import Hello from "./components/Hello/Hello";
+import Form from "./components/Form/Form";
+import Fetch from "./components/Fetch/Fetch";
 
 function App() {
   const [state] = useState({
@@ -42,14 +44,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Form />
+        <Fetch url="/greeting" />
 
         {todos?.map((todo, index) => (
           <Todo key={index} label={todo.label} completed={todo.completed} />

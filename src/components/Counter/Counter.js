@@ -15,7 +15,7 @@ const Counter = (props) => {
 
   return (
     <Fragment>
-      count {count}
+      <div> count {count}</div>
       <button onClick={decrementAction}> decrement </button>
       <button onClick={incrementAction}> increment </button>
     </Fragment>

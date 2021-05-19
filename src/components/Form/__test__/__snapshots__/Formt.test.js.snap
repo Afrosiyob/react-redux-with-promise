@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form 1`] = `
+<form>
+  <label
+    htmlFor="username"
+  >
+     Username: 
+  </label>
+  <input
+    id="username"
+    name="username"
+    onChange={[Function]}
+    type="text"
+  />
+  <br />
+  <label
+    htmlFor="password"
+  >
+     Password: 
+  </label>
+  <input
+    id="password"
+    name="password"
+    onChange={[Function]}
+    type="password"
+  />
+  <br />
+  <button
+    onClick={[Function]}
+  >
+     Submit 
+  </button>
+</form>
+`;
