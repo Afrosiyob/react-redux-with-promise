@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetch data snapshot 1`] = `
+Array [
+  <h1>
+    Fetch component
+  </h1>,
+  <p>
+    no data
+  </p>,
+]
+`;
