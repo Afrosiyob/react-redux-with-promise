@@ -1,27 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Fetch from "./components/Fetch/Fetch";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchData } from "./redux/fetch/action";
+import Routes from "./routes/Routes";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Fetch url="/greeting" />
-      </header>
-    </div>
-  );
+  const dispatch = useDispatch();
+
+  const url = "https://jsonplaceholder.typicode.com/todos/1";
+
+  useEffect(() => {
+    dispatch(fetchData(url));
+  }, [dispatch]);
+
+  return <Routes />;
 }
 
 export default App;
